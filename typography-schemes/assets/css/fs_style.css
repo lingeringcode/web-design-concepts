@@ -1,0 +1,196 @@
+/* IMPORTS */
+/*
+  Remember that the file formats are the result of different "compression" algorithms. Newer font formats and their file size are more efficiently compressed without losing their lovely looks. BUT, not all browsers support newer file formats. Consider the following:
+
+  ** EOT, Embedded OpenType: Compatible with Internet Explorer 6+.
+
+  ** WOFF, Web Open Font Format: Compatible with Firefox 3.6+, Safari 5.1+, Chrome 5+, Internet Explorer 9+, Opera 11.5+, Android 4.4+, and iOS Safari 5.1+.
+
+  ** WOFF2 — Next-gen WOFF that's ~20–30% reduced in file size. Compatible with Firefox 3.6+, Safari 5.1+, Chrome 36+, Edge 14+, Opera 23+, Android 67+, and iOS Safari 10+ (Mac OS Sierra and up only). 
+  
+  Check out https://canisuse.com for more details, when making your decisions. Here's the page for .woff2: https://caniuse.com/woff2
+*/
+
+/* MERRIWEATHER */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/merriweather-regular-webfont.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Merriweather/merriweather-regular-webfont.woff2') format('woff2'),
+    url('../fonts/Merriweather/merriweather-regular-webfont.woff') format('woff'),
+    url('../fonts/Merriweather/merriweather-regular-webfont.ttf') format('truetype'),
+    url('../fonts/Merriweather/merriweather-regular-webfont.svg') format('svg');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/merriweather-italic-webfont.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Merriweather/merriweather-italic-webfont.woff2') format('woff2'),
+    url('../fonts/Merriweather/merriweather-italic-webfont.woff') format('woff'),
+    url('../fonts/Merriweather/merriweather-italic-webfont.ttf') format('truetype'),
+    url('../fonts/Merriweather/merriweather-italic-webfont.svg') format('svg');
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Atkinson';
+  src: url('../fonts/Merriweather/merriweather-bold-webfont.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Merriweather/merriweather-bold-webfont.woff2') format('woff2'),
+    url('../fonts/Merriweather/merriweather-bold-webfont.woff') format('woff'),
+    url('../fonts/Merriweather/merriweather-bold-webfont.ttf') format('truetype'),
+    url('../fonts/Merriweather/merriweather-bold-webfont.svg') format('svg');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/merriweather-bolditalic-webfont.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Merriweather/merriweather-bolditalic-webfont.woff2') format('woff2'),
+    url('../fonts/Merriweather/merriweather-bolditalic-webfont.woff') format('woff'),
+    url('../fonts/Merriweather/merriweather-bolditalic-webfont.ttf') format('truetype'),
+    url('../fonts/Merriweather/merriweather-bolditalic-webfont.svg') format('svg');
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ATKINSON */
+@font-face {
+  font-family: 'Atkinson';
+  src: url('../fonts/Atkinson/EOT/Atkinson-Hyperlegible-Regular-102.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Atkinson/WOFF2/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'),
+    url('../fonts/Atkinson/WOFF/Atkinson-Hyperlegible-Regular-102.woff') format('woff'),
+    url('../fonts/Atkinson/TTF/Atkinson-Hyperlegible-Regular-102.ttf') format('truetype'),
+    url('../fonts/Atkinson/SVG/Atkinson-Hyperlegible-Regular-102.svg') format('svg');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Atkinson';
+  src: url('../fonts/Atkinson/EOT/Atkinson-Hyperlegible-Italic-102.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Atkinson/WOFF2/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2'),
+    url('../fonts/Atkinson/WOFF/Atkinson-Hyperlegible-Italic-102.woff') format('woff'),
+    url('../fonts/Atkinson/TTF/Atkinson-Hyperlegible-Italic-102.ttf') format('truetype'),
+    url('../fonts/Atkinson/SVG/Atkinson-Hyperlegible-Italic-102.svg') format('svg');
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Atkinson';
+  src: url('../fonts/Atkinson/EOT/Atkinson-Hyperlegible-Bold-102.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Atkinson/WOFF2/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2'),
+    url('../fonts/Atkinson/WOFF/Atkinson-Hyperlegible-Bold-102.woff') format('woff'),
+    url('../fonts/Atkinson/TTF/Atkinson-Hyperlegible-Bold-102.ttf') format('truetype'),
+    url('../fonts/Atkinson/SVG/Atkinson-Hyperlegible-Bold-102.svg') format('svg');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Atkinson';
+  src: url('../fonts/Atkinson/EOT/Atkinson-Hyperlegible-BoldItalic-102.eot') format('embedded-opentype');
+  src: 
+    url('../fonts/Atkinson/WOFF2/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2'),
+    url('../fonts/Atkinson/WOFF/Atkinson-Hyperlegible-BoldItalic-102.woff') format('woff'),
+    url('../fonts/Atkinson/TTF/Atkinson-Hyperlegible-BoldItalic-102.ttf') format('truetype'),
+    url('../fonts/Atkinson/SVG/Atkinson-Hyperlegible-BoldItalic-102.svg') format('svg');
+  font-style: italic;
+  font-weight: 700;
+}
+
+/*
+  TOC
+  1. GLOBAL VARS
+  2. GENERAL
+  3. TYPOGRAPHY
+  4. ARTICLE
+*/
+
+:root {
+  --eggplant: #3f0a2b;
+  --yelloworange: #fcba4e;
+}
+
+/* 
+  2. GENERAL
+*/
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--yelloworange);
+  color: var(--eggplant);
+  line-height: 2;
+}
+
+/* 
+  2. TYPOGRAPHY
+*/
+
+/* Font Sizing */
+body { font-size: 1.1rem; }
+h1 { font-size: 2.25rem; } 
+h2 { font-size: 1.5rem; } 
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.25rem; font-style: italic; }
+blockquote { font-size: 1.125rem; }
+
+/* Font Families */
+body { font-family: 'Atkinson'; }
+h1,h2,h3,blockquote { font-family: 'Merriweather'; }
+
+/* Headings */
+h1 {
+  margin-bottom: 35px;
+}
+
+/* 
+  3. ARTICLE
+*/
+
+/* Posts */
+
+.post {
+  margin: 0.25em;
+  padding: 1em;
+  border: var(--eggplant) solid 1px;
+  box-shadow: 7px 10px 5px 0px var(--eggplant);
+}
+
+/* paragraphs */
+.post p {
+  padding: 10px 0px 10px 40px;
+}
+
+/* blockquotes */
+.post blockquote {
+  padding: 1.25rem;
+  margin: 0em 4rem;
+}
+.post blockquote::before {
+  content: "“";
+  font-size: 2rem;
+}
+.post blockquote::after {
+  content: "”";
+  font-size: 2rem;
+}
+
+/* first letter */
+.post p:first-of-type:first-letter {
+  font-family: 'Merriweather';
+  font-size: 2.75rem;
+  font-weight: bold;
+  float: left;
+  margin: -30px 0px 0px -2px;
+}
+.post p:first-of-type:first-line {
+  margin-top: 20px;
+  line-height: 2;
+}

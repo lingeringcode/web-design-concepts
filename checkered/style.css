@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;500;600;700;800&display=swap');
+
+html,body {
+  margin:0;
+  padding: 0;
+}
+/* TYPOGRAPHY */
+
+h1,h2,h3 { font-family: 'Bungee', cursive; }
+
+h1 {
+  font-size: clamp(2em,14vw,25vw);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: manual;
+  color: white;
+}
+
+h2 {
+  font-size: clamp(2rem,3rem,5rem);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: clamp(1.5rem,2rem,3rem);
+  font-style: italic;
+}
+
+p {
+  font-family: 'Sono', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.65mm;
+  font-size: clamp(1.2rem, 1.5rem, 2rem);
+}
+
+/* GRID AREAS */
+.checkered > .checker:nth-child(1) {grid-area: c1}
+.checkered > .checker:nth-child(2) {grid-area: c2}
+.checkered > .checker:nth-child(3) {grid-area: c3}
+.checkered > .checker:nth-child(4) {grid-area: c4}
+.checkered > .checker:nth-child(5) {grid-area: c5}
+.checkered > .checker:nth-child(6) {grid-area: c6}
+.checkered > .checker:nth-child(7) {grid-area: c7}
+.checkered > .checker:nth-child(8) {grid-area: c8;}
+.checkered > h1 {grid-area: hdr;position: relative;}
+.checkered > main {grid-area: main;}
+
+.checker {
+  background: black;
+  min-height: 50px;
+}
+
+/* GRID LAYOUT */
+
+.checkered {
+  display: grid;
+  grid-template-columns: repeat(2, 50px) repeat(4, minmax(50px, 1fr));
+  grid-template-areas:
+    "c1 . hdr hdr hdr hdr"
+    ". c2 hdr hdr hdr hdr"
+    "c3 . hdr hdr hdr hdr"
+    ". c4 main main main main"
+    "c5 . main main main main"
+    ". c6 main main main main"
+    "c7 . main main main main"
+    ". c8 main main main main"
+  ;
+}
+
+/* 
+  POSITIONING & Z-INDEX LAYERS
+
+  Position all content above the checker piece.
+
+  These elements are set as relative, so the absolute positioned checker piece image can be layered beneath this textual content. See how the image's z-index is set to 0, while all other elements are positioned as relative to it on z-index 1 above the checker piece image.
+*/
+h1,h1 > span,main {
+  position: relative;
+  z-index: 1;
+}
+
+.checker-piece {
+  position: fixed;
+  z-index: 0;
+}
+
+/* TITLE */
+
+h1 {
+  position: relative;
+  background-color: black;
+  padding: 20vh 0;
+  margin: 0;
+}
+
+/* 
+  title text content
+*/
+h1 > span {
+  
+  /* Create flexible height and width to manage the large font sizing */
+  height: 100%;
+  width: 100%;
+  margin: 1rem 0;
+  
+  /* Create checkerboard background */
+  background-image: linear-gradient(135deg, black 25%, transparent 25%), linear-gradient(225deg, black 25%, transparent 25%), linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(315deg, black 25%, #ffffff 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  /* clip the background to the text itself */
+  -webkit-background-clip: text;
+}
+
+/* h1 refinements */
+
+h1 span.red {
+  background-image: linear-gradient(135deg, #ff4040 25%, transparent 25%), linear-gradient(225deg, #ff4040 25%, transparent 25%), linear-gradient(45deg, #ff4040 25%, transparent 25%), linear-gradient(315deg, #ff4040 25%, #ffffff 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* h1 span.c {
+  margin-left: -72px;
+  -webkit-text-fill-color: #ff0000;
+} */
+
+.checker-piece {
+  top: clamp(40px, 80px, 90px);
+  right: 5px;
+  width: clamp(25vw, 38vw, 45vw);
+}
+
+/* MAIN CONTENT AREA */
+
+main {
+  color: white;
+  padding: 2rem;
+  background-color: #ff4040;
+}
+
+/* main images */
+.checkerboard {
+  width: 45vw;
+  /* Use https://tools.webdevpuneet.com/css-clip-path-generator/ to create polygon paths for cool custom clipping effects */
+  shape-outside: polygon(17% 0, 84% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(17% 0, 84% 0, 100% 100%, 0% 100%);
+  float:left;
+  margin-right: 1rem;
+}
+
+/* main sections */
+
+section.columns-2 > p {
+  columns: 2;
+}
+
+/* MEDIA QUERIES */
+
+/* smaller screens */
+@media screen and (max-width: 720px) {
+
+  .checkered {
+    grid-template-columns: repeat(7, minmax(50px, 1fr));
+    grid-template-areas:
+      "c1 . c2 . c3 . c4"
+      "hdr hdr hdr hdr hdr hdr hdr"
+      "main main main main main main main"
+      "c5 . c6 . c7 . c8"
+    ;
+  }
+
+  body {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+  
+}

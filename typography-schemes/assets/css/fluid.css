@@ -1,0 +1,138 @@
+/* IMPORTS */
+/* Fonts from https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css?family=Oswald|PT+Sans');
+
+/*
+  TOC
+  1. GENERAL
+  2. TYPOGRAPHY
+  3. EFFECTS
+  4. MAIN
+*/
+
+
+/* GENERAL */
+
+html {
+  font-size: 18px;
+  background-color: #f2a44d;
+  color: #03261a;
+}
+
+ul {
+  margin: 0; padding: 0;
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+}
+
+/* TYPOGRAPHY */
+
+/* Font Families */
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; }
+p { font-family: 'PT Sans', sans-serif; }
+
+
+
+/*============================
+  Using rem values 
+    > Simple, but not flexible
+  =========================*/
+
+/* h1 { font-size: 3.5rem; }
+h2 { font-size: 2rem; }
+p { font-size: 1rem; } */
+
+
+
+/*======================================
+  Using vw values
+    > Flexible, but difficult to control
+  ====================================*/
+
+/* h1 { font-size: 5vw; }
+h2 { font-size: 3.5vw; }
+p { font-size: 1.5vw; } */
+
+
+
+/*======================================
+  Flexible typography using calc() + vw
+  
+  Formula: 
+  
+  calc(
+    [minimum size] + ([maximum size] - [minimum size]) 
+      * (
+          (100vw - [minimum viewport width]) 
+          / ([maximum viewport width] - [minimum viewport width])
+        )
+  )
+  ===================================*/
+
+/* body {
+  font-size: 16px;
+  font-size: calc(16px + (18-16)*(100vw - 80vw)/(1200 - 320));
+} */
+
+
+
+/*=================================
+  Flexible typography using clamp()
+  https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+
+  Parameters: clamp(min, val, max)
+
+  minimum == smallest size possible
+  value   == the preferred size
+  maximum == largest size possible
+  ===============================*/
+
+body  { font-size: clamp(18px, 5vw, 28px); }
+h1    { font-size: clamp(36px, 10vw, 62px) }
+h2    { font-size: clamp(30px, 10vw, 48px); }
+
+
+
+/* EFFECTS */
+
+/* Shape Effects */
+
+/* circle shape floats */
+.float-left-cir { float: left; }
+.float-right-cir { float: right; }
+
+.float-left-cir,
+.float-right-cir {
+  max-width: 100%;
+  margin-right: 25px;
+  border-radius: 50%;
+  shape-outside: circle();
+}
+
+/* <hr> - horizontal rule effects */
+.scoring {
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 8px, currentcolor 8px, currentcolor 10px);
+  padding: 0px;
+  aspect-ratio: 6 / 1;
+  border: 0px;
+  display: block;
+  color: #bf6d0f;
+}
+
+.thicker {
+  background-color: currentcolor;
+  padding: 0px;
+  height: 4px;
+  border: 0px;
+  display: block;
+  color: inherit;
+}
+
+/* MAIN */
+main {
+  padding: 2rem;
+  line-height: 1.5;
+  margin: 1em;
+}

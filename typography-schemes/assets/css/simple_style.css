@@ -1,0 +1,52 @@
+@import "nav.css";
+/* Import Fonts from https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css?family=Monoton|Metrophobic|Roboto');
+
+/* 
+  1. GENERAL
+*/
+
+html {
+  font-size: 18px; /* Define root font-size */
+  background: antiquewhite;
+}
+
+/* 2. TYPOGRPAHY SCHEME */
+
+/* Font Sizing */
+h1 { font-size: 2.25rem; /* @ 18px, computes to 40.50px */ } 
+h2 { font-size: 1.5rem;  /* @ 18px, computes to 27.00px */ } 
+h3 { font-size: 1.125rem;/* @ 18px, computes to 20.25px */}
+h4 { font-size: 1.05rem; font-style: italic; }
+
+/* Font Families */
+h1, h2, h3, h4 { 
+  font-family: Monoton;
+}
+p {
+  font-family: Metrophobic;
+}
+
+/* 3. MAIN */
+main {
+  /* width: 55%; */
+  padding: 2em;
+}
+
+/* 4. ASIDE */
+
+aside {
+  width: 20%;
+  padding: 2em;
+  border: 1px solid #e2ccaf;
+  box-shadow: 6px 7px 1px 0px #e2ccaf;
+}
+
+aside h2 {
+  font-family: Metrophobic;
+  font-size: 1.1rem;
+}
+aside p {
+  font-family: Roboto;
+  font-size: 0.85rem;
+}
