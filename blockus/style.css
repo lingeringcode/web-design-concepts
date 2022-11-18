@@ -5,8 +5,15 @@
   --forest-green: #314139;
 }
 
+html {
+  background-image: url(mtn.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
-  margin: 0;
+  margin: 0 30px 0 0;
   padding: 0;
   font-size: 16px;
   font-size: calc(16px + (18-16)*(100vw - 80vw)/(1200 - 320));
@@ -45,10 +52,6 @@ p {
 }
 
 main {
-  background-image: url(mtn.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(6, minmax(50px,1fr));
@@ -120,4 +123,3 @@ main > * {
   height:100%;
   border-bottom: 35px outset #9a9;
 }
-
