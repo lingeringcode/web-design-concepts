@@ -1,0 +1,68 @@
+.boxy-header {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(50px,1fr));
+  grid-template-areas:
+  "title title logo logo logo subhd"
+  "title title logo logo logo subhd"
+  "st1 st1 st1 . . ."
+  ". st2 st2 st2 . ."
+  ". . . st3 st3 st3"
+  ;
+}
+
+/* Header's Grid Areas */
+.boxy-header > h1 {grid-area: title;}
+.boxy-header > .logo {grid-area: logo;}
+.boxy-header > .sub-heading {grid-area: subhd;}
+.boxy-header > .statement-1 {grid-area: st1;}
+.boxy-header > .statement-2 {grid-area: st2;}
+.boxy-header > .statement-3 {grid-area: st3;}
+
+.logo {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  grid-template-areas:
+  "imglogo  lw1"
+  "imglogo ."
+  "imglogo lw2"
+  ;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 0 20vh 0;
+}
+
+.logo > img {grid-area: imglogo;}
+.logo > .logo-word-1 {grid-area: lw1;}
+.logo > .logo-word-2 {grid-area: lw2;}
+
+.circular {
+  height: 8vh;
+  margin: 10em 2em;
+  width: 80%;
+  clear: both;
+  float: left;
+  text-transform: uppercase;
+}
+.circular svg {
+  display: block;
+  overflow: visible;
+  font-size: 1.65rem;
+}
+.circular path {
+  fill: #a7ffe3;
+  stroke: #000;
+}
+.circular text {
+  fill: #000;
+  y: 20;
+}
+
+.logo > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  justify-self: center;
+}
+.logo-word-1 {
+  transform: rotate(310deg);
+}
